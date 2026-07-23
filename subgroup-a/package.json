@@ -1,1 +1,13 @@
-
+{
+  "name": "subgroup-a-notetaking-api",
+  "version": "1.0.0",
+  "description": "Note-Taking API - Subgroup A - Group 4 Backend Development Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "dotenv": "^16.4.5"
+  }
+}
