@@ -13,3 +13,26 @@
       <h1>📝 Note-Taking API</h1>
       <p class="subtitle">Subgroup A — Group 4 Backend Development Project</p>
     </header>
+    <section class="note-form">
+      <h2 id="form-title">Add a New Note</h2>
+      <input type="hidden" id="note-id">
+      <input type="text" id="note-title" placeholder="Note title" required>
+      <textarea id="note-content" placeholder="Note content" rows="4" required></textarea>
+      <div class="form-buttons">
+        <button id="submit-btn" onclick="submitNote()">Add Note</button>
+        <button id="cancel-btn" onclick="cancelEdit()" style="display:none;">Cancel</button>
+      </div>
+      <p id="error-msg" class="error"></p>
+    </section>
+
+    <section class="notes-list">
+      <h2>All Notes</h2>
+      <div id="notes-container">
+        <p class="empty-state">Loading notes...</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
