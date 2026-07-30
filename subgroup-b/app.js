@@ -31,3 +31,7 @@ app.post('/api/notes', (req, res) => {
   res.status(201).json(newNote);
 });
 
+// 2. READ ALL
+app.get('/api/notes', (req, res) => {
+  res.json(notes);
+});
