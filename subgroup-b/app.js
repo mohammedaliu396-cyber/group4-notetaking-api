@@ -35,3 +35,15 @@ app.post('/api/notes', (req, res) => {
 app.get('/api/notes', (req, res) => {
   res.json(notes);
 });
+
+// 2. READ ONE
+app.get('/api/notes/:id', (req, res) => {
+  const noteId = parseInt(req.params.id, 10);
+  const note = notes.find(n => n.id === noteId);
+
+  if (!note) {
+    return res.status(404).json({ error: 'Note not found.' });
+  }
+
+  res.json(note);
+});
