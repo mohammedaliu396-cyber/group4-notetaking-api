@@ -1,1 +1,70 @@
-
+{
+  "info": {
+    "name": "Subgroup A - Note-Taking API",
+    "description": "CRUD endpoint tests for the Note-Taking API (Group 4, Subgroup A)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://your-app-name.onrender.com"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Note",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"My First Note\",\n  \"content\": \"This is the content of my note.\"\n}" },
+        "url": { "raw": "{{base_url}}/notes", "host": ["{{base_url}}"], "path": ["notes"] }
+      }
+    },
+    {
+      "name": "Get All Notes",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/notes", "host": ["{{base_url}}"], "path": ["notes"] }
+      }
+    },
+    {
+      "name": "Get Single Note",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/notes/1", "host": ["{{base_url}}"], "path": ["notes", "1"] }
+      }
+    },
+    {
+      "name": "Update Note",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Updated Title\",\n  \"content\": \"Updated content.\"\n}" },
+        "url": { "raw": "{{base_url}}/notes/1", "host": ["{{base_url}}"], "path": ["notes", "1"] }
+      }
+    },
+    {
+      "name": "Delete Note",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "{{base_url}}/notes/1", "host": ["{{base_url}}"], "path": ["notes", "1"] }
+      }
+    },
+    {
+      "name": "Create Note - Missing Fields (Error Case)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"\"\n}" },
+        "url": { "raw": "{{base_url}}/notes", "host": ["{{base_url}}"], "path": ["notes"] }
+      }
+    },
+    {
+      "name": "Get Note - Not Found (Error Case)",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "{{base_url}}/notes/9999", "host": ["{{base_url}}"], "path": ["notes", "9999"] }
+      }
+    }
+  ]
+}
