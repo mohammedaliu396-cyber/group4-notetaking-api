@@ -47,3 +47,14 @@ app.get('/api/notes/:id', (req, res) => {
 
   res.json(note);
 });
+
+// 3. UPDATE
+const newNote = {
+    id: notes.length ? notes[notes.length - 1].id + 1 : 1,
+    title,
+    content
+  };
+
+  notes.push(newNote);
+  res.status(201).json(newNote);
+});
