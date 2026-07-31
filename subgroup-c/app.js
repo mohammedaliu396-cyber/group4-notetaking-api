@@ -2,16 +2,14 @@ const express = require("express");
 
 const app = express();
 
-// Parse incoming JSON requests
 app.use(express.json());
 
-const PORT = 3000;
+const noteRoutes = require("./routes/notes");
 
-app.get("/", (req, res) => {
-  res.send("Server is up and running!");
-});
+app.use("/notes", noteRoutes);
 
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
 });
